@@ -1,24 +1,28 @@
+import java.util.Scanner;
+
 public class Question10 {
     public static void main(String[] args) {
-        int n = 5;
+        Scanner scanner = new Scanner(System.in);
 
-        for(int i=1; i<=n; i++) {
-            for(int j=1; j<=n-i; j++) {
-                System.out.print(" ");
+        System.out.print("n 값을 입력하세요: ");
+        int n = scanner.nextInt();
+
+        int sum = 0;
+
+
+        for (int i = 1; i <= n; i++) {
+            sum += i;
+
+
+            if (n >= 100) {
+                System.out.println("n이 100 이상입니다. 합은 " + sum + "입니다.");
+                break;
             }
-            /*
-            1=1
-            2=3
-            3=5 3*2-1
-            4=7 4*2-1
-            5=9 5*2-1
-            10=19 10*2-1
-            * */
-            for(int k=1; k<= i*2-1; k++) {
-                System.out.print("*");
-            }
-            System.out.println("");
+        }
+        if (n < 100) {
+            System.out.println("n이 100 미만입니다. 합은 " + sum + "입니다.");
         }
 
+        scanner.close();
     }
 }
